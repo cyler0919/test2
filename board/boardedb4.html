@@ -1,0 +1,1412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<!-- Mirrored from d4-0186.d4.makeshop.co.kr/board/board.html?code=d4-0186_board2&page=1&type=v&board_cate=&num1=999999&num2=00000&number=1&lock=N by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Dec 2018 07:36:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=euc-kr" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html;charset=EUC-KR">
+
+<title>REVIEW-REVIEW 게시판입니다.</title>
+
+<link type="text/css" rel="stylesheet" href="../shopimages/d4-0186/template/work/10847/common.css" /></head>
+
+<body>
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+function getCookiefss(name) {
+    lims = document.cookie;
+    var index = lims.indexOf(name + "=");
+    if (index == -1) {
+        return null;
+    }
+    index = lims.indexOf("=", index) + 1; // first character
+    var endstr = lims.indexOf(';', index);
+    if (endstr == -1) {
+        endstr = lims.length; // last character
+    }
+    return unescape(lims.substring(index, endstr));
+}
+</script><script type="text/javascript">
+var MOBILE_USE = '';
+</script><script type="text/javascript" src="../js/flash.js"></script>
+<script type="text/javascript" src="../js/neodesign/rightbanner.js"></script>
+<script type="text/javascript" src="../js/bookmark.js"></script><script type="text/javascript">
+var refurl = getCookiefss('refurl');
+if (refurl == 'inpk_opstyle') {
+    // 오픈스타일 헤더 추가
+    document.write('<script type="text/javascript" src="../../www.interpark.com/malls/openstyle/OpenStyleEntrTop.js"><' + '/script>');
+    document.body.style.backgroundPosition = '0px 41px';
+
+    // 투프레임 타임일 때 상단 프레임 높이 조정
+    (function() {
+        if (!top || !top.document.body.rows) {
+            return;
+        }
+
+        var rows = top.document.body.rows;
+        var pos = rows.search(',');
+        var top_h = parseInt(rows.substr(0, pos));
+        if (top_h < 1) {
+            return;
+        }
+
+        top.document.body.rows = (top_h + 41) + rows.substr(pos);
+    })();
+}
+refurl = null;
+</script>
+<style type="text/css">
+
+.MS_search_word { }
+
+</style>
+
+<script type="text/javascript" src="../js/prototype.js"></script>
+
+<script type="text/javascript">
+
+            var reply_flag = false;
+            function comment_save(idx) {
+                (function ($) {
+                    if (idx.length == 0) {
+                        idx = 0;        // 없으면 0
+                    }
+                    var container = $('form[name=comment]:eq(' + idx + ')');        // focus 줄때 필요
+                    var reply_form = $('form[name=comment_reply_form]');
+                    var reply_input = $('#comment_reply_input');
+                    var target;         // 인증키 타겟
+                    var comment_type;   // 리플인지 리플의 리플인지 판단
+                    
+                    
+                    if (typeof(document.getElementById('check_auth')) != 'undefined') {     // 여긴 왜 jQuery 가 아니지? 
+                        $('#check_auth').attr("style", "display:inline");
+                    }
+                    if (reply_flag == true ) {
+                    // 댓글인 경우라면? 
+
+                        $('input, textarea', reply_input).each(function () {
+                        // submit 할 form 으로 data 를 모두 옮긴다. 
+                            if (this.value.length > 0) {
+                                $('input[name=' + this.name + ']', reply_form).val(this.value);
+                            }
+                        });
+
+                        // 비밀글여부 체크
+                        $('input[name=secret]', reply_form).val('N');
+                        if ($('input[name=secret]', reply_input).attr('checked')) {
+                            $('input[name=secret]', reply_form).val('Y');
+                        }
+
+                        
+
+                        var form = reply_form;
+                        container = reply_input;
+                        target = 'check_auth_reply';
+                        comment_type = 'comment_reply_form';
+                    } else {
+                        var form = container = $('form[name=comment]:eq(' + idx + ')');
+                        target = 'check_auth';
+                        comment_type = 'comment';
+                    }
+
+                    
+
+                    if ($('input[name=cname]', container).val().length == 0) {
+                        alert('댓글을 입력하시는 분의 성함을 입력하세요.');
+                        $('input[name=cname]', container).focus();
+                        return false;
+                    }
+                    if ($('input[name=cpass]', container).val().length == 0) {
+                        alert('비밀번호를 입력하세요.');
+                        $('input[name=cpass]', container).focus();
+                        return false;
+                    }
+                    if ($(':input[name=comment]', container).val().length == 0) {
+                        alert('댓글을 입력하세요.');
+                        $('textarea[name=comment]', container).focus();     // container에는 textarea다
+                        return false;
+                    }
+                    if (Checklength2($(':input[name=comment]', container).val()) == false) {
+                        $(':input[name=comment]', container).focus();
+                        return false;
+                    }
+                    if (Checklength($(':input[name=comment]', container).val()) == false) {
+                        $(':input[name=comment]', container).focus();
+                        return false;
+                    }
+                    //call_checkwin('hidden');        // 인증키 노출 전에 hidden 을 할 이유가 있나?? 주석 처리 해보자 
+
+                    num = idx;
+                    
+
+                                    var auth_suc = true;
+                if (auth_suc == true) {
+                    if ($('#rewrite_comment_check').val() == 'rewrite') {
+                        alert('진행중입니다.');
+                    } else {
+
+                        if ($('#rewrite_comment_check').length > 0) {
+                            $('#rewrite_comment_check').val('rewrite');
+                        } else {
+                            $(document.body).append('<input type="hidden" id="rewrite_comment_check" value="rewrite" />');
+                        }
+                        $('input[name=comtype]', form).val('cw');
+
+                         form.submit(); 
+                        //form.submit();
+
+                        if (reply_flag == true || $('input[name=comment]', reply_form).val().length > 0) {
+                            comment_reply_close();
+                        }
+                    }
+
+                    reply_flag = false;
+                }
+
+                    /*
+                    if (auth_suc == true) {
+                        if ($('#rewrite_comment_check').val() == 'rewrite') {
+                            alert('진행중입니다.');
+                        } else {
+
+                            if ($('#rewrite_comment_check').length > 0) {
+                                $('#rewrite_comment_check').val('rewrite');
+                            } else {
+                                $(document.body).append('<input type="hidden" id="rewrite_comment_check" value="rewrite" />');
+                            }
+                            $('input[name=comtype]', form).val('cw');
+
+                            form.submit();
+
+                            if (reply_flag == true || $('input[name=comment]', reply_form).val().length > 0) {
+                                comment_reply_close();
+                            }
+                        }
+
+                        reply_flag = false;
+                    }
+                    */
+                })(jQuery);
+            }
+
+            function CheckLogin() {
+                var login = 'N';
+                if (login == 'Y') {
+                    alert('게시판 댓글은 로그인해야 쓰기가 가능합니다.');
+                    location.href = '../shop/member5b18.html?code=d4-0186_board2&amp;page=1&amp;btype=v&amp;board_cate=&amp;num1=999999&amp;num2=00000&amp;number=1&amp;lock=N&amp;type=board&amp;focus=comment';
+                }
+            }
+
+            function Checklength(content, size) {
+                CheckLogin();
+                if (!content) {
+                    return false;
+                }
+                if (!size) {
+                    size = 500;
+                }
+
+                if (size == 0) {
+                    return;
+                }
+                messlength = 0;
+                len = content.length;
+                for (i = 0; i < len; i++) {
+                    mun = content.charAt(i);
+                    if (escape(mun) == '%0D') {
+                    } else if (escape(mun).length > 4) {
+                        messlength += 2;
+                    } else {
+                        messlength++;
+                    }
+                }
+                if (messlength > (size * 2)) {
+                    alert('한글 ' + size + '자, 영문+숫자는 ' + parseInt(size * 2) + "자까지만 입력가능합니다.\n\n다시한번 확인하시기 바랍니다.");
+                    return false;
+                }
+            }
+
+            function Checklength2(content) {
+                var  size2 = 0;
+                messlength = 0;
+                len = content.length;
+                for (i = 0; i < len; i++) {
+                    mun = content.charAt(i);
+                    if (escape(mun) == '%0D') {
+                    } else if (escape(mun).length > 4) {
+                        messlength += 2;
+                    } else {
+                        messlength++;
+                    }
+                }
+                if(messlength < (size2 * 2)) {
+                    alert('한글 ' + size2 + '자, 영문+숫자는 ' + parseInt(size2 * 2) + "자이상 입력하셔야 합니다.\n\n다시한번 확인하시기 바랍니다.");
+                    return false;
+                }
+            }
+
+            
+            function call_checkwin(view_type,comnum, target) {
+                if (comnum == undefined) { 
+                    comnum = 0;
+                }
+                if (target == undefined) {
+                    target = 'check_auth';
+                }
+                if (view_type == 'visible') {
+                    var passuid = '';
+
+                    if (typeof(document.checker) != 'undefined') {
+                        //passuid = document.checker.authid.value;      // 항상 새로운 값을 받기 위해...
+                    }
+
+                    var params = {
+                        'passuid': passuid,
+                        'comnum': comnum,
+                        'close_method' : 'call_checkwin',
+                        'close_param' : 'hidden'
+                    };
+                    
+
+                    jQuery.ajax({
+                        type : 'post',
+                        url : '/board/auth_win.ajax.html',
+                        data : params,
+                        success : function(response) {
+                            jQuery('#'+target).html(response);
+                        }
+                    });
+                }
+
+                // 창을 새로 그림?!
+                                if (typeof(document.getElementById('check_auth')) != 'undefined') {
+                    var container = jQuery('#check_auth');
+                    if (reply_flag == true || jQuery('form[name=comment_reply_form] input[name=comment]').val().length > 0) {
+                        var _obj = jQuery('#comment_reply_input');
+                        container.css('z-index', '100');
+                    } else {
+                        var _obj = jQuery('form[name=comment]:eq(' + comnum + ')');
+                    }
+
+                    var _pos = _obj.offset();
+                    container.css({
+                            'visibility': view_type,
+                            'top' : _pos.top
+                    });
+                }
+                return;
+            }
+
+</script>
+
+<link type="text/css" rel="stylesheet" href="../shopimages/d4-0186/template/work/10847/board_view.d4-0186_board23af9.css?t=201507061754" />
+<div id='blk_scroll_wings'><script type='text/javascript' src='../html/shopRbannerd19e.html?param1=1' ></script></div>
+<div id='cherrypicker_scroll'></div>
+<div id="wrap">
+    
+<link type="text/css" rel="stylesheet" href="../shopimages/d4-0186/template/work/10847/header.117af.css?t=201507061604" />
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<style type="text/css">
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+  src: url(http://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(http://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+       url(http://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+       url(http://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+</style>
+
+<!-- 회원가입 -->
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<script type="text/javascript"> 
+$(function() { // 페이지 로딩이 끝나면 처리합니다.
+    baloonUp();
+    function baloonUp() { $("#join_message").animate({'top':30}, 'slow', null, baloonDown);}
+    function baloonDown() { $("#join_message").animate({'top':25}, 1000, null, baloonUp);}
+}); 
+</script> 
+
+
+
+
+<div id="header_top">
+	<div id="header">
+
+
+
+
+		<div id="topbar">
+			<div class="box_1200">
+
+
+				<div class="topbar_left">
+					<ul>
+												<li class="first"><a href="../shop/memberb8bf.html?type=login">login</a></li>
+						<li><a href="../shop/idinfo.html">join us</a>
+							<div id="join_message">
+								<img src="../design/d4-0186/onedesign/images/join_message.png">
+							</div>
+						</li>
+												<li><a href="../shop/basket.html">cart</a></li>
+						<li><a href="../shop/confirm_login30b8.html?type=myorder">order</a></li>
+						<li><a href="../shop/membera005.html?type=mynewmain">mypage</a></li>
+					</ul>
+				</div> <!-- .topbar_left -->
+
+
+				<div class="topbar_right">
+					<ul>
+						<li class="first2"><a href="boardbf19.html?code=d4-0186">notice</a></li>
+						<li><a href="boardd1e4.html?code=d4-0186_image1">event</a></li>
+						<li><a href="boarda795.html?code=d4-0186_board1">q&a</a></li>
+						<li><a href="board8678.html?code=d4-0186_board2">review</a></li>
+					</ul>
+				</div> <!-- .topbar_right -->
+
+
+			</div> <!-- .box_1200 -->		
+		</div> <!-- #topbar -->
+
+
+
+
+		<div id="logoline">
+			<a href="../index.html"><img src="../design/d4-0186/onedesign/images/logo.gif" /></a>
+		</div> <!-- #logoline -->
+
+
+
+
+		<div id="cate_box">
+			<div id="cateline">
+				<div class="box_1200">
+
+					<div id="category">
+						<div class="position">
+							<ul>
+																<li><a href="../shop/shopbrand1db0.html?type=O&amp;xcode=001">KITCHEN</a></li>
+																<li><a href="../shop/shopbrand24fa.html?type=O&amp;xcode=002">HOME DECO</a></li>
+																<li><a href="../shop/shopbrand58bc.html?type=O&amp;xcode=003">FURNITURE</a></li>
+																<li><a href="../shop/shopbrand5272.html?type=O&amp;xcode=004">FABRIC</a></li>
+																<li><a href="../shop/shopbrand6278.html?type=O&amp;xcode=005">BED & BATH</a></li>
+																<li><a href="../shop/shopbrand0448.html?type=O&amp;xcode=006">LIVING</a></li>
+																<li><a href="../shop/shopbrand191f.html?type=O&amp;xcode=007">SALE</a></li>
+																<li><a href="../shop/shopbrand21c1.html?type=O&amp;xcode=008">ONLY YOU</a></li>
+															</ul>
+						</div>
+					</div>
+
+				</div> <!-- .box_1200 -->
+			</div> <!-- #cateline -->
+		</div> <!-- #cate_box -->
+
+
+
+
+	</div> <!-- #header -->
+</div> <!-- #header_top -->    <div id="contentWrapper">
+        <div id="contentWrap">
+            <div id="side">
+
+
+	<div class="btn_close" id='btn_close'>
+		<img src="../design/d4-0186/onedesign/images/btn_close.png">
+	</div>
+
+
+	<div class="side_right  side_first">
+		<div class="side_title">
+			INSTAGRAM <span class="side_sub">fallow <a href="https://instagram.com/" target="_blank">@onedesigncom</a></span>
+		</div> <!-- .side_title -->
+		<div class="insta_widget">
+					<div><a href="https://www.instagram.com/onedesigncom" target="_blank"><img src="../../onedesigncom.cafe24.com/instagram/insta_moirai.gif"></a></div>
+
+		</div> <!-- .insta_widget -->
+	</div> <!-- .side_right -->
+
+
+	<div class="side_right">
+		<div class="side_title">
+			CS CENTER
+		</div> <!-- .side_title -->
+		<div class="cscenter">
+			<span class="tel">1599-3360</span> <br>
+			OPEN AM10 - PM06 <br>
+			LUNCH PM12 - PM01 <br>
+			SAT/SUN/HOLIDAY OFF
+		</div> <!-- .cscenter -->
+	</div> <!-- .side_right -->
+
+
+	<div class="side_right">
+		<div class="side_title">
+			BANK INFO
+		</div> <!-- .side_title -->
+		<div class="bank">
+			<span class="kor">국민</span> 000000-00-000000 <br>
+			<span class="kor">우리</span> 0000-000-0000000 <br>
+			<span class="kor">예금주 : 원디자인</span>
+		</div> <!-- .bank -->
+	</div> <!-- .side_right -->
+
+
+	<!-- 검색 -->
+	<div class="sear">
+		<form action="http://d4-0186.d4.makeshop.co.kr/shop/shopbrand.html" method="post" name="search">		<fieldset>
+			<legend>검색</legend>
+			<span><input name="search" onkeydown="CheckKey_search();" value=""  class="MS_search_word" /></span>
+			<a href="javascript:search_submit();"><input type="image" src="../design/d4-0186/onedesign/images/btn_search.gif" alt="검색" onclick="{$action_search_submit}" /></a>
+		</fieldset>
+		</form>	</div>
+	<!-- //검색 -->
+
+
+	<div class="side_right social_box">
+		<div class="side_title social_title">
+			SOCIAL LINK
+		</div> <!-- .side_title -->
+		<div class="social_icon">
+			<ul>
+				<li class="first"><a href="https://instagram.com/" target="_blank"><img src="../design/d4-0186/onedesign/images/social_01.png"></a></li>
+				<li><a href="http://blog.naver.com/" target="_blank"><img src="../design/d4-0186/onedesign/images/social_02.png"></a></li>
+				<li><a href="https://story.kakao.com/" target="_blank"><img src="../design/d4-0186/onedesign/images/social_03.png"></a></li>
+				<li><a href="https://www.facebook.com/" target="_blank"><img src="../design/d4-0186/onedesign/images/social_04.png"></a></li>
+			</ul>
+		</div> <!-- .social_icon -->
+	</div> <!-- .side_right -->
+
+
+	<div class="side_menu line_top"><a href="javascript:CreateBookmarkLink('../index.html', '');" class="bookmark">BOOKMARK</a></div>
+	<div class="side_menu"><a href="http://service.epost.go.kr/iservice/trace/Trace.jsp" target="_blank" class="delivery">DELIVERY</a></div>
+
+
+	<div class="fixBtn">
+		<div id="pageTop" style="display:none;"><a href="#"><img src="../design/d4-0186/onedesign/images/btn_top.png"></a></div>
+	</div> <!-- .fixBtn -->
+
+
+
+
+</div><!-- #side -->
+
+
+
+
+<script type="text/javascript">
+/* 우측 열고 닫는 배너 */
+var jq = jQuery;
+
+(function($){
+var swImgs = function(a){
+	var eId = document.getElementById(a);
+		if(eId != null){
+			var elem = eId.getElementsByTagName('a');
+			var num = elem.length;
+			eId.imgFile=[],eId.swFile=[],imgExt = /(\.\w{3,4}$)/;
+			for(var i=0; i< num; i++){
+				if(elem[i].className!=="none"){
+				eId.imgFile[i] = elem[i].children[0].src;
+				eId.swFile[i] = new Image();
+				eId.swFile[i].src = eId.imgFile[i].replace(imgExt,'_r$1');
+				elem[i].su = i;
+				elem[i].onmouseover=function(){
+					this.children[0].src = eId.swFile[this.su].src;
+					}
+				elem[i].onmouseout=function(){
+					this.children[0].src = eId.imgFile[this.su];
+					}
+				}
+			}
+		}
+}
+
+		jQuery("#btn_close").click(function(){ //버튼
+
+			var dateExpires  = new Date();
+			var strCookie;
+			var isSSMStatus;
+
+			if(jQuery("#side").css("right")=="0px"){
+				jQuery("#side, .fixBtn").animate({"right":"-181px"},300, "swing"//, function () {
+					//jQuery("#btn_close img").attr({ "src": "/design/d4-0391/onedesign/images/btn_close.png" });
+				//}
+				); //	OPEN : 움직이는 가로값
+	            isSSMStatus = "fold";
+
+			}else{
+				jQuery("#side, .fixBtn").animate({"right":"0"}, 300, "swing"//, function () {
+					//jQuery("#btn_close img").attr({ "src": "/design/d4-0391/onedesign/images/btn_close2.png" });
+				//}
+				); //CLOSE : 움직이는 가로값
+				isSSMStatus = "unfold";
+
+			}
+			dateExpires.setDate(dateExpires.getDate() + 30);
+			strCookie  = "cookie_ssm_status=" + escape(isSSMStatus);
+			strCookie += "; path=/; domain=d4-0186.d4.makeshop.co.kr"; //도메인 : 적용 사이트 주소로 입력해야 쿠키 적용 ★★★★
+			strCookie += "; expires=" + dateExpires.toGMTString();
+			document.cookie = strCookie;
+		});
+
+var swImgs1 = new swImgs('gnb');
+var swImgs1 = new swImgs('logo');
+	var quick_status= getCookie("cookie_ssm_status");
+
+	if (quick_status=="fold" ) {
+        $("#side, .fixBtn").css({"right":"-181px"}); //OPEN : 움직이는 가로값
+	} else if (quick_status=="unfold"  ){
+       $("#side, .fixBtn").css({"right":"0px"}); //CLOSE : 움직이는 가로값
+ 
+	}
+
+
+})(jQuery);
+
+
+function getCookie( name )
+{
+	var nameOfCookie = name + "=";
+	var x = 0;
+	while ( x <= document.cookie.length )
+	{
+	var y = (x+nameOfCookie.length);
+	if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+	if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+	endOfCookie = document.cookie.length;
+	return unescape( document.cookie.substring( y, endOfCookie ) );
+	}
+	x = document.cookie.indexOf( " ", x ) + 1;
+	if ( x == 0 )
+	break;
+	}
+	return "";
+}
+</script>            <div id="content">
+
+
+<div class="title_board2">
+	<h2>REVIEW <span>구매하신 상품의 후기를 적어주세요.</span></h2>	
+</div>
+
+			<div id="bbsData">
+
+
+                    <div class="page-body">
+                                       <dl class="prd-tinfo">
+                            <dt>
+                                <a href="../shop/shopdetail7035.html?branduid=7012&amp;xcode=001&amp;mcode=000&amp;scode=&amp;GfDT=bml3UQ%3D%3D"><img src="../shopimages/d4-0186/0010000000103306f.jpg?1436162949" /></a>
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li class="name"><span class="tit">상 품 명:</span><a href="../shop/shopdetail7035.html?branduid=7012&amp;xcode=001&amp;mcode=000&amp;scode=&amp;GfDT=bml3UQ%3D%3D">모이라이 샘플상품</a> <span class='MK-product-icons'></span><!--/coupon_icon/--></li>
+                                    <li class="price"><span class="tit">상품가격:</span><strong>155,000원</strong></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <div class="bbs-table-view">
+                            <table summary="게시글 보기">
+                                <caption>게시글 보기</caption>
+                                <thead>
+                                    <tr>
+                                        <th><div class="tb-center">REVIEW 게시판입니다.</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="line">
+                                            <div class="cont-sub-des">
+                                                <div>
+                                                    <span><em>DATE :</em> 2015-07-06</span>                                                </div>
+                                                <div>
+                                                    <span><em>NAME :</em> onedesign</span>
+                                                                                                    </div>
+                                                <div class="hit"><span><em>HITS :</em> 332</span></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="data-bd-cont">
+                                                                                                <div id=MS_WritenBySEB>REVIEW 게시판입니다.</div>                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+<div id="comment_list_0"></div><form id="comment_form" name="comment" action="http://d4-0186.d4.makeshop.co.kr/board/board.html?code=d4-0186_board2&amp;page=1&amp;type=v&amp;board_cate=&amp;num1=999999&amp;num2=00000&amp;number=1&amp;lock=N" method="post" autocomplete="off">
+<input type="hidden" name="page_type" value="board_view" />
+<input type="hidden" name="formnum" value="0" />
+<input type="hidden" name="code" value="d4-0186_board2" />
+<input type="hidden" name="num1" value="999999" />
+<input type="hidden" name="num2" value="00000" />
+<input type="hidden" name="page" value="1" />
+<input type="hidden" name="lock" value="N" />
+<input type="hidden" name="type" value="v" />
+<input type="hidden" name="type2" />
+<input type="hidden" name="comnum" />
+<input type="hidden" name="comtype" />
+<input type="text" name="___DUMMY___" readonly disabled style="display:none;" /><input type="hidden" name="secret" value="N" />                            <fieldset>
+                                <legend>코멘트 쓰기</legend>
+                                                                                                                                    <table summary="코멘트 쓰기" class="comment-box">
+                                    <caption>코멘트 쓰기</caption>
+                                    <colgroup>
+                                        <col width="120" />
+                                        <col />
+                                        <col width="150" />                                                                            
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3" class="com-wrt-box">
+                                                <div>
+                                                    <div class="wrt">
+                                                        <label>name</label><span><input type="text" name="cname"  class="MS_input_txt input-style input-style2" value="" onclick="CheckLogin()" onkeypress="CheckLogin()" placeholder=이름 /></span>
+                                                        <label>password</label><span><input type="password" name="cpass"  class="MS_input_txt input-style input-style2" onclick="CheckLogin()" onkeypress="CheckLogin()" placeholder=패스워드 /> </span>
+                                                    </div>
+                                                    <div class="wrt"><textarea name="comment" onchange="Checklength(this);" onkeyup="Checklength(this);" onclick="CheckLogin()"   placeholder=내용></textarea><a href="javascript:comment_save('');"> <img src="../images/d3/modern_simple/btn/btn_h57_write.gif" alt="글쓰기" title="글쓰기" /></a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+</form>                            <div class="view-link">
+                                <dl class="bbs-link con-link">
+                                    <dt></dt>
+                                    <dd>
+                                        <a href="board1b63.html?code=d4-0186_board2&amp;page=1&amp;board_cate=&amp;num1=999999&amp;num2=00000&amp;type=q&amp;type2=u" class="none"><img src="../design/d4-0186/onedesign/images/sub_btn_05.gif" /></a>                                        <a href="boardab35.html?code=d4-0186_board2&amp;page=1&amp;board_cate=&amp;num1=999999&amp;num2=00000&amp;type=q&amp;type2=d"><img src="../design/d4-0186/onedesign/images/sub_btn_06.gif" /></a>                                                                            </dd>
+                                </dl>
+                                <dl class="bbs-link">
+                                    <dt></dt>
+                                    <dd>
+                                        <a class="write" href="board2eab.html?code=d4-0186_board2&amp;page=1&amp;board_cate=&amp;type=i"><img src="../design/d4-0186/onedesign/images/sub_btn_01.gif" /></a>                                        <a href="boardca60.html?code=d4-0186_board2&amp;page=1&amp;board_cate=&amp;s_id=&amp;stext=&amp;ssubject=&amp;shname=&amp;scontent=&amp;sbrand=&amp;sgid=&amp;datekey=&amp;branduid="><img src="../design/d4-0186/onedesign/images/sub_btn_02.gif" /></a>                                    </dd>
+                                </dl>                                                                
+                            </div>
+                            <div class="bbs-table-list">
+                                <table summary="게시글 목록">
+                                    <caption>게시글 목록</caption>
+                                    <colgroup>
+                                        <col />
+                                        <col width="120" />
+                                        <col width="90" />
+                                        <col width="60" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><div class="tb-center" style="font-weight:normal;">Content</div></th>
+                                            <th scope="col"><div class="tb-center" style="font-weight:normal;">Name</div></th>
+                                            <th scope="col"><div class="tb-center" style="font-weight:normal;">Date</div></th>
+                                            <th scope="col"><div class="tb-center" style="font-weight:normal;">Hits</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                    <tr>
+                                            <td>
+                                                <div class="tb-left">
+                                                    <img src="images/neo_default.gif" />
+                                                    <img src="images/neo_head.gif" style="margin-left: 00px" />
+                                                    [모이라이 샘플상품]                                                    <a href="board316c.html?code=d4-0186_board2&amp;page=1&amp;type=v&amp;board_cate=&amp;num1=999999&amp;num2=00000&amp;s_id=&amp;stext=&amp;ssubject=&amp;shname=&amp;scontent=&amp;sbrand=&amp;sgid=&amp;datekey=&amp;branduid=&amp;number=&amp;lock=N">REVIEW 게시판입니다.</a>
+                                                                                                                                                                                                            </div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-center">
+                                                                                                                                                                    onedesign                                                                                                    </div>
+                                            </td>
+                                            <td><div class="tb-center">2015-07-06</div></td>
+                                            <td><div class="tb-center">332</div></td>
+                                        </tr>
+                                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- .page-body -->
+                </div><!-- #bbsData -->
+            </div><!-- #content -->
+        </div><!-- #contentWrap -->
+    </div><!-- #contentWrapper-->
+    <hr />
+    <div id="footer_wrap">
+
+
+
+
+	<div id="footer">
+
+
+		<!-- 하단정보 -->
+		<div class="footer_info">
+			<div class="footer_title info_title">INFORMATION</div>
+			<div class="footer_text">
+				업체명. 원디자인 <br>
+				전화번호. <span class="eng">1599-3360</span> <br>
+				대표. 김덕현 <br>
+				주소. 부산광역시 부산진구 전포동 <span class="eng">683-7</span> 원디자인 <br>
+				사업자등록번호. <span class="eng">000-00-00000</span> <br>
+				통신판매업번호. <span class="eng">2015-</span>부산진구<span class="eng">-0000</span> <br>
+				개인정보관리책임자. 김덕현 <span class="eng">onedesign@hanmail.net</span> <br>
+				<div class="footer_link_btn"><a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" target="_blank">사업자정보확인</a></div>
+			</div> <!-- .footer_text -->
+		</div> <!-- .footer_info -->
+
+
+		<!-- 고객센터 & 은행정보 -->
+		<div class="footer_contact">
+			<div class="footer_title">CONTACT</div>
+			<div class="footer_text">
+				<span class="footer_call eng">1599-3360</span> <br>
+				<span class="eng">OPEN AM10 - PM06 / LUNCH PM12 - PM01</span> <br>
+				<span class="eng">CLOSE SAT/SUN/HOLIDAY OFF</span> <br><br>
+				국민 <span class="eng">000000-00-000000</span> <br>
+				우리 <span class="eng">0000-000-0000000</span> <br>
+				예금주 : 원디자인
+			</div> <!-- .footer_text -->
+		</div> <!-- .footer_contact -->
+
+
+		<!-- 저작권 -->
+		<div class="footer_copy">
+			<div class="footer_title">ABOUT US</div>
+			<div class="footer_text">
+				<span class="eng">MOIRAI</span> <br>
+				<span class="eng footer_text2">2015 (C) E-ONEDESIGN.COM / DESIGN BY <a href="http://e-onedesign.com/" target="_blank">E-ONEDESIGN.COM</a></span>
+			</div> <!-- .footer_text -->
+			<div class="footer_title">RETURN & EXCHANGE</div>
+			<div class="footer_text">
+				반품주소 : 부산광역시 부산진구 전포동 <span class="eng">683-7</span> 원디자인 </span> <br>
+				<div class="footer_link_btn"><a href="http://service.epost.go.kr/iservice/trace/Trace.jsp" target="_blank">배송조회하기</a></div>
+			</div> <!-- .footer_text -->
+		</div> <!-- .footer_copy -->
+
+
+	</div> <!-- #footer -->
+
+
+
+
+	<div id="footer_cate">
+
+		<ul>
+			<li class="first"><a href="../shop/page681a.html?id=1">회사소개</a></li>
+			<li><a href="javascript:view_join_terms();">이용약관</a></li>
+			<li><a href="../html/info.html">사이트 이용안내</a></li>
+			<li><a href="javascript:bottom_privacy();">개인정보 취급방침</a></li>
+		</ul>
+
+		<div class="escrow"><img src="../design/d4-0186/onedesign/images/escrow.gif"></div>
+
+	</div> <!-- #footer_cate -->
+
+
+
+
+</div> <!-- #footer_wrap -->
+</div><!-- #wrap -->
+<style type="text/css">
+
+#comment_reply_input {
+    position: absolute;
+    width: 600px;
+    display: none;
+    border: 2px solid #757575;
+    padding: 7px;
+    background: #FFF;
+    z-index: 5;
+}
+
+#comment_password {
+    position: absolute;
+    display: none;
+    width: 300px;
+    border: 2px solid #757575;
+    padding: 7px;
+    background: #FFF;
+    z-index: 6;
+}
+
+#check_auth,
+#check_auth * { margin: 0; padding: 0; font-size: 12px; }
+#check_auth li { list-style: none; }
+#check_auth img { vertical-align: middle; }
+#check_auth fieldset,
+#check_auth img { border: 0; }
+#check_auth caption,
+#check_auth legend { display: none; }
+#check_auth { position: absolute; left: 50%; margin-left: -127px; width: 250px; padding-bottom: 10px; background: #fff; border: 2px solid #dadada; }
+#check_auth h2 { padding: 7px 0; text-align: center; font-weight: normal; border-bottom: 1px solid #dadada; background: #f0f0f0; }
+#check_auth h2 img { margin-right: 3px; }
+#check_auth table { width: 100%; table-layout: fixed; border-spacing: 0; border-collapse: collapse; }
+#check_auth table th,
+#check_auth table td { padding: 7px; border-bottom: 1px solid #dadada; }
+#check_auth table th { font-weight: normal; border-right: 1px solid #dadada; }
+#check_auth table .txt-key { width: 105px; height: 18px; line-height: 18px; border: 1px solid #dadada; }
+#check_auth .btn { margin-top: 10px; text-align: center; }
+#check_auth .btn img { vertical-align: top; } 
+
+</style>
+
+<iframe id="loginiframe" name="loginiframe" style="display: none;" frameborder="no" scrolling="no"></iframe>
+
+<div id="basketpage" name="basketpage" style="position: absolute; visibility: hidden;"></div>
+
+                <form id="comment_reply_form" name="comment_reply_form" action="http://d4-0186.d4.makeshop.co.kr/board/board.html?code=d4-0186_board2&amp;page=1&amp;type=v&amp;board_cate=&amp;num1=999999&amp;num2=00000&amp;number=1&amp;lock=N" method="post">
+                <input type="hidden" name="code" />
+                <input type="hidden" name="num1" />
+                <input type="hidden" name="num2" />
+                <input type="hidden" name="page" />
+                <input type="hidden" name="lock" />
+                <input type="hidden" name="type" />
+                <input type="hidden" name="page_type" />
+                <input type="hidden" name="formnum" />                <input type="hidden" name="type2" />
+                <input type="hidden" name="comnum" />
+                <input type="hidden" name="comtype" />
+                <input type="hidden" name="depth" />
+                <input type="hidden" name="cname" />
+                <input type="hidden" name="cpass" />
+                <input type="hidden" name="secret" />
+                <input type="hidden" name="comment" />
+                <input type="hidden" name="authtext" />
+                <input type="hidden" name="authid" />
+                <input type="hidden" name="privercy_agree" />
+                <input type="hidden" name="third_party_agree" />
+                <input type="hidden" name="trust_agree" />
+                </form>
+
+<div id="comment_reply_input"></div>
+
+                <div id="comment_password">
+                    <form onsubmit="comment_password_submit(); return false;" style="height: 20px; margin: 0; padding: 0;">
+                    <input type="hidden" id="pw_num" name="pw_num" value="" />
+                    <input type="hidden" id="pw_mode" name="pw_mode" value="" />
+                    <input type="hidden" id="formnum" name="formnum" value="0" />
+                    <span style="font-weight: bold;">비밀번호</span>
+                    <input type="password" id="input_passwd" name="input_passwd" size="25" value="" style="vertical-align: middle;" />
+                    <img src="images/btn_ok.gif" alt="확인" onclick="comment_password_submit();" style="border: 0px; cursor: pointer; vertical-align: middle;" />
+                    <img src="images/btn_close.gif" alt="닫기" onclick="comment_password_close();" style="border: 0px; cursor: pointer; position: absolute; top: 5px; right: 5px;" />
+                    </form>
+                </div>
+
+<div id="comment_input"></div>
+
+<script type="text/javascript">
+
+function topnotice(temp, temp2) {
+    window.open("../html/noticeb8bf.html?date=" + temp + "&db=" + temp2, "", "width=450,height=450,scrollbars=yes");
+}
+function notice() {
+    window.open("../html/noticea927.html?mode=list", "", "width=450,height=450,scrollbars=yes");
+}
+
+
+
+function CheckKey_search() {
+    key = event.keyCode;
+    if (key == 13) {
+        
+        document.search.submit();
+    }
+}
+
+function search_submit() {
+    var oj = document.search;
+    if (oj.getAttribute('search') != 'null') {
+        var reg = /\s{2}/g;
+        oj.search.value = oj.search.value.replace(reg, '');
+        oj.submit();
+    }
+}
+
+        function view_join_terms() {
+            window.open('../html/join_terms.html','join_terms','height=570,width=590,scrollbars=yes');
+        }
+
+    function bottom_privacy() {
+        window.open('../html/privacy.html', 'privacy', 'height=570,width=590,scrollbars=yes');
+    }
+
+function upalert() {
+   alert('파일첨부 버튼을 클릭하세요');
+   document.form1.subject.focus();
+}
+function clear_content() {
+                return;
+}
+
+            (function ($) {
+                $(function () {
+                    $('form[name=comment], form[name=comment_reply_form]').submit(function () {
+                        var _form_name = this.name;
+                        var _this = this;
+                        var params = $(this).serialize();
+
+                        $.ajax({
+                            type: 'post',
+                            url: '/board/comment_d3.action.html',
+                            dataType: 'json',
+                            data: params,
+                            success: function (res) {
+                                alert(res.msg);
+                                if (!res.success) {
+                                    $('#rewrite_comment_check').val('');
+                                    return false;
+                                }
+                                if (_form_name == 'comment_reply_form') {
+                                    var form = $('form[name=comment]:eq(' + res.data.formnum + ')');
+                                    // get_comment_list를 위해...
+                                    $('input[name=page_type]', form).val(res.data.page_type);
+                                    $('input[name=code]', form).val(res.data.code);
+                                    $('input[name=num1]', form).val(res.data.num1);
+                                    $('input[name=num2]', form).val(res.data.num2);
+
+                                    // 값을 비워줘야 comment_save에서 form을 제대로 selecting함
+                                    var init_form = $('form[name=' + _form_name + ']');
+                                } else {
+                                    //var init_form = $('form[name=' + _form_name + ']').eq(res.data.formnum);
+                                    var init_form = _this;
+                                }
+                                        $('input[name=privercy_agree][value="N"]', init_form).trigger('click');
+                                if ($('input[name=cname]', init_form).attr('type') != 'hidden') {
+                                    $('input[name=cname]', init_form).val('');
+                                }
+                                $('input[name=cpass]', init_form).val('');
+                                $(':input[name=comment]', init_form).val('');
+                                // comment_reply_form 에는 hidden 으로 값을 저장한다. 
+                                // 그래서 :input[name=comment] 로 사용함 (input, textarea) 둘다 select 됨
+
+                                get_comment_list(res.data.page, res.data.formnum);
+                                $('#rewrite_comment_check').val('');
+
+                                return false;
+                            }
+                        });
+                        return false;
+                    });
+                });
+             })(jQuery);
+
+            function comment_reply_close() {
+                var reply_input = jQuery('#comment_reply_input');//document.getElementById('comment_reply_input');
+                                reply_init(reply_input);
+                reply_input.css('display','none');
+                
+                call_checkwin('hidden');
+                reply_flag = false;
+            }
+
+                function reply_init(re_obj) {
+                    // 모바일에만 해당 될수도 있으나 동일 function 사용 처리를 위해 function 화 함
+                    // check_auth 에 대한 부분 원복 처리 
+                    if (re_obj.html().length > 0 ) {
+                        // PC 도 필요할까??? 
+                        //jQuery('#check_auth').detach().appendTo('body').attr("style", "display:none");// body 에 layer 로 띄우기 위한 부분 
+                    }
+                    re_obj.html('');
+                }
+                function comment_password(num, mode, obj, formnum) {
+                    // 코멘트 리플 작성창 닫기
+                    comment_reply_close();
+
+                    var comment_password = document.getElementById('comment_password');
+                    var _event           = jQuery(obj).offset();
+                    var client_x         = _event.left;
+                    var client_y         = _event.top;
+
+                    document.getElementById('pw_num').value = num;
+                    if (formnum.length > 0) {
+                        document.getElementById('formnum').value = formnum;
+                        jQuery('#formnum').val(formnum);
+                    }
+                    document.getElementById('pw_mode').value = mode;
+
+                    if (typeof(comment_password) != 'undefined') {
+                        jQuery(comment_password).css({
+                                'top': client_y + 'px',
+                                'left': (client_x - jQuery(comment_password).width() - (jQuery(obj).width() / 2)) + 'px'
+                                });
+
+                        comment_password.style.display = 'block';
+                    }
+                    document.getElementById('input_passwd').value = '';
+                    document.getElementById('input_passwd').focus();
+                }
+
+            var delete_flag = false;
+            function power_comment_del(num, mode, obj, formnum) {
+                // 두 값에 대해 넣어놓지 않으면....삭제할때 참고할 데이터가 없음 ㅠㅠ 
+                document.getElementById('pw_num').value = num;
+                document.getElementById('pw_mode').value = mode;
+
+                if (delete_flag == true) {
+                    alert('진행중 입니다.');
+                    return;
+                }
+                var form = jQuery('form[name=comment]:eq(' + formnum + ')');
+                var pwd = 'power_review'; // 이거 그냥 파워리뷰일때 통과하려고 !
+
+                delete_flag = true;
+                new Ajax.Request('comment.ajax.html', {
+                    method: 'post',
+                    requestHeaders: {Accept: 'application/json'},
+                    parameters: {
+                        code: jQuery('input[name=code]', form).val(),
+                        num1: jQuery('input[name=num1]', form).val(),
+                        num2: jQuery('input[name=num2]', form).val(),
+                        comnum: num,
+                        pwd : pwd,
+                        mode: mode
+                    },
+                    onSuccess: comment_action
+                });
+            }
+
+            var delete_flag = false;
+            function comment_password_submit() {
+                if (delete_flag == true) {
+                    alert('진행중 입니다.');
+                    return;
+                }
+                var num = document.getElementById('pw_num').value;
+                var formnum = document.getElementById('formnum').value;
+                //var form = document.getElementById('comment_form');
+                var form = jQuery('form[name=comment]:eq(' + formnum + ')');
+                var mode = document.getElementById('pw_mode').value;
+                var pwd = document.getElementById('input_passwd').value;
+
+                if (pwd.length <= 0) {
+                    alert('비밀번호를 입력해주세요.');
+                    document.getElementById('input_passwd').focus();
+                    return false;
+                }
+
+                delete_flag = true;
+                new Ajax.Request('comment.ajax.html', {
+                    method: 'post',
+                    requestHeaders: {Accept: 'application/json'},
+                    parameters: {
+                        code: jQuery('input[name=code]', form).val(),
+                        num1: jQuery('input[name=num1]', form).val(),
+                        num2: jQuery('input[name=num2]', form).val(),
+                        comnum: num,
+                        pwd: pwd,
+                        mode: mode
+                    },
+                    onSuccess: comment_action
+                });
+            }
+
+            function comment_action(req) {
+                delete_flag = false;
+                var result = req.responseText;
+                result = eval('(' + result + ')');
+                var num = document.getElementById('pw_num').value;
+                //var formnum = document.getElementById('formnum').value;
+                //var form = document.getElementById('comment_form');
+                //var mode = document.getElementById('pw_mode').value;
+                //var pwd = document.getElementById('input_passwd').value;
+                var formnum = jQuery('#formnum').val();
+                var form = jQuery('form[name=comment]:eq(' + formnum + ')');
+                var mode = jQuery('#pw_mode').val();
+                var pwd = jQuery('#input_passwd').val();
+
+                if (result.success == 'FAIL') {
+                    alert('비밀번호가 다릅니다.');
+                    document.getElementById('input_passwd').focus();
+                    return false;
+                } else if (result.success == 'EMPTY') {
+                    alert('잘못된 접근 입니다..');
+                    return false;
+                } else if (result.success == 'AUTH') {
+                    alert('삭제 권한이 없습니다.');
+                    return false;
+                } else {
+                    if (mode == 'delete') {
+                        if (confirm('댓글을 삭제 하시겠습니까?')) {
+                            (function ($) {
+                                $.ajax({
+                                    type: 'post',
+                                    url: '/board/comment_d3.action.html',
+                                    dataType: 'json',
+                                    data: {
+                                        code: $('input[name=code]', form).val(),
+                                        num1: $('input[name=num1]', form).val(),
+                                        num2: $('input[name=num2]', form).val(),
+                                        comnum: num,
+                                        pwd: pwd,
+                                        comtype: 'cd'
+                                    },
+                                    success: function (res) {
+                                        if (res.success) {
+                                            comment_password_close();
+                                            alert('삭제 되었습니다');
+                                            get_comment_list($('input[name=page]', form).val(), formnum);
+                                        } else if (typeof res.fail_type != 'undefined') {
+                                            alert(res.msg);
+                                        } else {
+                                            alert('삭제에 실패했습니다. 다시 시도해주세요.');
+                                        }
+                                        return false;
+                                    }
+                                });
+                            })(jQuery);
+                            return false;
+                        } else {
+                            return false;
+                        }
+                    } else {
+                        document.getElementById('comment_' + formnum + '_' + num).innerHTML = result.msg;
+                        comment_password_close();
+                    }
+                    return false;
+                }
+            }
+
+            function comment_password_close() {
+                var comment_password = document.getElementById('comment_password');
+                comment_password.style.display = 'none';
+                document.getElementById('pw_num').value = '';
+                document.getElementById('pw_mode').value = '';
+                document.getElementById('input_passwd').value = '';
+                
+                return false;
+            }
+
+            function comment_reply(num, depth, cnt, element) {
+                // 댓글의 댓글을 작성 한다. 
+            // 댓글의 댓글 작성 할 때 해당 게시글의 num1/num2 를 댓글 작성 div 에 넣어준다. 
+
+                reply_flag = true;
+                comment_password_close();
+                // 댓글 비밀번호 확인 창을 닫는다.
+                (function ($) {
+                    var obj             = $('#comment_reply_form');         // 댓글 입력 폼 객체
+                    var reply_input     = $('#comment_reply_input');        // 댓글 입력 폼 container
+
+                    // PC/Mobile ADD part1 
+                                        var _event = $(element).offset();
+                    var client_x        = _event.left;
+                    var client_y        = _event.top;
+
+                    reply_input.html('');
+                    //reply_init(reply_input);
+
+                    var comment_input = $('#comment_input' + cnt);
+                    reply_input.html($('form[name=comment]:eq(' + cnt + ')').html());
+                    if (cnt) {
+                        if (comment_input) {
+                            reply_input.html(reply_input.html().replace(/tabIndex=/g, "tabIndex=99"));
+                        }
+                    }
+                    var _html = reply_input.html() + '<div style="position:relative;text-align:center;margin-top:5px;width:100%;padding-bottom:2px;"><a href="#none" onclick="comment_reply_close();return false;"><img src="/board/images/btn_comment_reply_close.gif" align="absmiddle" border="0" /></a></div>';
+                    reply_input.html(_html);
+                    // PC ADD part1 END
+
+                    var input_child = $(':input', reply_input);
+                    for (var i = 0; i < input_child.length; i++) {
+                        if (input_child[i].type != 'hidden' && input_child[i].disabled === false && input_child[i].name != '' && input_child[i].type != 'radio') {
+                            input_child[i].value = '';
+
+                            if (focus_input == undefined) {
+                                var focus_input = i;
+                            }
+                        }
+                    }
+                    $('input[name=comnum]', obj).val(num);
+                    $('input[name=depth]', obj).val(depth);                    if (typeof(reply_input) != 'undefined') {
+                                        var _y = document.body.scrollTop + client_y + 10;
+                reply_input.css('top', client_y);
+                        reply_input.css('width', $('form[name=comment]:eq(' + cnt + ')').width() + 'px');
+                        reply_input.css('left', (client_x - $(reply_input).width()) + 'px');
+                        reply_input.show();
+                    }
+
+                    if (focus_input != undefined && input_child[focus_input].style.display != 'none') {
+                        input_child[focus_input].focus(); 
+                    }
+                                    })(jQuery);
+            }
+
+            var is_get_comment = false;
+            function get_comment_list(page, formnum) {
+                (function ($) {
+                    if (page == undefined) {
+                        page = 1;
+                    }
+
+                    var form = $('form[name=comment]:eq(' + formnum + ')');
+                    $('input[name=page]', form).val(page);     // 페이지 정보 저장
+
+                    var params = {
+                        page_type: $('input[name=page_type]', form).val(),
+                        board_code: $('input[name=code]', form).val(),
+                        num1: $('input[name=num1]', form).val(),
+                        num2: $('input[name=num2]', form).val(),
+                        formnum: formnum,
+                        page: page
+                    };
+                    $.ajax({
+                        type:'post',
+                        url:'/board/comment.list.html',
+                        dataType: 'html',
+                        data: params,
+                        success: function (res) {
+                            // IE9 내용이 많은 테이블 Cell 한칸씩 밀리는 버그 수정
+                            if ( $.browser.msie ) {
+                                var expr = new RegExp('>[ \t\r\n\v\f]*<', 'g');
+                                    res = res.replace(expr, '><'); 
+                            }
+                            $('#comment_list_' + formnum).html(res);
+                            // 최초 접근시엔 동작하지 않도록 함
+                            if (is_get_comment === true) {
+                                location.href = '#board_comment_list_target';
+
+                                // 스크롤을 해당 글 위치로 이동
+                                var _offset = $('a[name="board_comment_list_target"]').offset();
+                                if (_offset !== null) { window.scrollTo(0, _offset.top); }
+                            }
+
+                            is_get_comment = true;
+                            return false;
+                        }
+                    });
+                })(jQuery);
+            }
+
+                // ajax.request 로 인증값 체크
+                function f_check_auth(val) {
+                    new Ajax.Request(
+                            'auth.check.html', 
+                            {
+                                method: 'post',  
+                                parameters: { 
+                                    authtext: val, 
+                                    authid: document.checker.authid.value
+                                }, 
+                                onComplete : f_check_auth_callback 
+                            });
+                }
+
+                // ajax.request 콜백함수
+                function f_check_auth_callback(req) {
+                    var result = req.responseText;
+                    var comnum = document.checker.comnum.value;
+
+                    if (result == 'success') {
+                        var _form = jQuery('form[name=comment_reply_form]');
+
+                        if (jQuery(':input[name=comment]', _form).val().length > 0 && reply_flag === true) {
+                            jQuery('input[name=comtype]', _form).val('cw');
+                        } else if (comnum) {
+                            _form = jQuery('form[name=comment]:eq(' + comnum + ')');
+                            jQuery('input[name=comtype]', _form).val('cw');
+                        } else {
+                            _form = jQuery('form[name=comment]:eq(0)');
+                            jQuery('input[name=comtype]', _form).val('cw');
+                        }
+                        _form.submit();
+                        jQuery('form[name=checker] input[name=passuid]').val('');
+                        call_checkwin('hidden');
+                        if (reply_flag == true || jQuery('form[name=comment_reply_form] input[name=comment]').val().length > 0) {
+                            comment_reply_close();
+                            reply_flag = false;
+                        }
+                    } else {
+                        alert('인증키가 잘못되었습니다. 정확하게 입력하시기 바랍니다.');
+                        document.getElementById('check_auth').innerHTML = '';
+                        call_checkwin('visible', comnum);
+                    }
+                }
+
+            // 댓글 추천 함수
+            function comment_recommend(code, num1, num2, cuid) {
+                jQuery.ajax( {
+                    type: 'POST',
+                    url: '/board/comment.ajax.html',
+                    dataType : 'json',
+                    data : {code:code, num1:num1, num2:num2, comnum:cuid, mode:'recommend'},
+                    success : function (req) {
+                        alert(req.msg);
+                        if (req.success == 'SUCCESS') {
+                            location.reload();
+                        }
+                    }
+                });
+            }
+
+            (function ($) {
+                get_comment_list(1, 0);
+             })(jQuery);
+
+
+
+</script>
+<script type="text/javascript">
+var pagekin_el = document.getElementsByTagName("div");
+var pagekin_id = [];
+for(var i=0; i < pagekin_el.length;i++){ 
+        if(pagekin_el[i].className.substring(0,4)=="PKMW") {
+                    pagekin_id.push(pagekin_el[i].className);
+                        }
+}
+if(pagekin_id.length>0) {
+    var script=document.createElement('script');
+    script.src='../../image.makeshop.co.kr/pagekin/widget/makeshop.d0393.js??20181220';
+    script.charset='utf-8';
+    document.body.appendChild(script);
+}
+</script>
+<!--script type="text/javascript" src="//www.pagekin.com/widget/makeshop.js" charset="utf-8"></script--><script type="text/javascript" src="../js/cookie.js"></script>
+<script type="text/javascript">
+function __mk_open(url, name, option) {
+    window.open(url, name, option);
+    //return false;
+}
+
+function action_invalidity() {
+    return false;
+}
+</script>
+<script type="text/javascript"></script><script type="text/javascript"></script><script>
+
+
+function getInternetExplorerVersion() {
+    var rv = -1;
+    if (navigator.appName == 'Microsoft Internet Explorer') {
+    var ua = navigator.userAgent;
+    var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+    if (re.exec(ua) != null)
+    rv = parseFloat(RegExp.$1);
+    }
+    return rv;
+}
+
+function showcherrypickerWindow(height,mode,db){
+    cherrypicker_width = document.body.clientWidth;
+    var isIe = /*@cc_on!@*/false;
+    if (isIe) {
+        cherrypicker_width = parseInt(cherrypicker_width + 18);
+    }
+    setCookie('cherrypicker_view','on', 0);
+
+    
+    document.getElementById('cherrypicker_layer').style.display = "block";
+    document.getElementById('cherrypicker_layer').innerHTML = Createflash_return(cherrypicker_width,'','../flashskin/CherryPicker15ea.html?initial_xml=/shopimages/d4-0186/cherrypicker_initial.xml%3Fv=1545291053&amp;product_xml=/shopimages/d4-0186/%3Fv=1545291053', 'cherrypicker_flash', '');
+}
+
+function load_cherrypicker(){
+    cherrypicker_check = true;
+
+    if (!document.getElementById('cherrypicker_layer')) {
+        return;
+    }
+
+
+}
+</script>
+
+<script type="text/javascript" src="../shopimages/d4-0186/template/work/10847/common.js"></script>
+
+
+</body>
+
+<!-- Mirrored from d4-0186.d4.makeshop.co.kr/board/board.html?code=d4-0186_board2&page=1&type=v&board_cate=&num1=999999&num2=00000&number=1&lock=N by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Dec 2018 07:36:32 GMT -->
+</html>

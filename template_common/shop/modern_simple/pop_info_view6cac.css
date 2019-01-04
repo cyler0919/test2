@@ -1,0 +1,17 @@
+/* BASIC css start */
+#infoPop { padding: 20px; }
+#infoPop .tit-pop { padding-right: 15px; background: url(../../../images/neo_1/common/bull_h13_dw_arw.html) no-repeat right 10px; }
+#infoPop .tit-pop span { position: relative; display: block; padding-bottom: 7px; background: url(../../../images/neo_1/common/dot_h1_w10.html) repeat-x 0 bottom; }
+#infoPop .tit-pop .txt { position: absolute; right: 10px; bottom: 5px; font-size: 11px; }
+#infoPop .table-notice { margin-top: 10px; }
+#infoPop .table-notice thead th { padding: 7px 0 6px; background-color: #ededed; }
+#infoPop .table-notice thead .tb-nbold { font-weight: normal; }
+#infoPop .table-notice tr.nbg td { background-image: none; }
+#infoPop .table-notice tbody td {  background: url(../../../images/neo_1/common/dot_h1_w10.html) repeat-x 0 0; }
+#infoPop .table-notice tbody td { padding: 7px 0 6px; }
+#infoPop .table-notice tfoot td { padding: 7px 0 6px; border-top: 1px solid #b7b7b7; }
+#infoPop .table-notice .tb-inline { display: inline; }
+#infoPop .btn-foot { margin-top: 35px; text-align: center; font-size: 0; line-height: 0; }
+#infoPop .btn-foot a { margin-left: 3px; margin-right: 3px; }
+/* BASIC css end */
+

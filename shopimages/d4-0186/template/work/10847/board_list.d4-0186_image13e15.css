@@ -1,0 +1,33 @@
+/* BASIC css start */
+#bbsData .bbs-link { position: relative; }
+#bbsData .bbs-link-top { margin-top: 10px; margin-right: 0px; text-align: left; margin-left: 0px; }
+
+#bbsData .bbs-link-btm { position:relative; float:right; margin:0px 0px 0;  text-align:left;  }
+#bbsData .bbs-link-btm a { position:absolute; top:20px; right:0px; }
+
+.bbs-sch { position:relative; left:0px; }
+
+.fixed-img-collist { width: 1200px; border-bottom: 0px solid #e5e5e5; }     
+.fixed-img-collist ul { margin: 0 auto;  width:1200px; margin-left:0px; }
+.fixed-img-collist ul li { float: left; text-align:center; width:25%; padding-bottom:60px; }
+.fixed-img-collist ul li a,
+.fixed-img-collist ul li a div { clear:both; display:block; width:270px; margin:0 auto; }
+
+
+
+/* 이미지 */
+.fixed-img-collist ul li a .gall_img { border:0px; }
+.fixed-img-collist ul li a .gall_img img { width: 270px; max-width:270px; max-height:270px; vertical-align:top; border:0px; }
+
+/* 타이틀 */
+.fixed-img-collist ul li a .gall_title { color:#2e2e2e; line-height:20px; padding:15px 0; font-size:12px;border-bottom:1px solid #e4e4e4; }
+
+/* noimage */
+.fixed-img-collist ul li a span.noimg { display: block; width:270px; text-align: center; font-size: 16px; line-height: 270px; font-family: Tahoma; border: 0px solid #dedede; background-color: #e0e0e0; }
+.fixed-img-collist ul li p { font-size: 11px; margin-top: 3px; }
+
+/* 아이콘, 이름 */
+.fixed-img-collist ul li a .gall_icon,
+.fixed-img-collist ul li a .gall_name { display:none; }
+/* BASIC css end */
+

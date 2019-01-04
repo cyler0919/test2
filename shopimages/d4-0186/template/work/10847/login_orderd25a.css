@@ -1,0 +1,73 @@
+/* BASIC css start */
+#loginpage { width:840px; margin:0 auto; }
+#loginpage #logbox { width:840px; margin:0 auto; }
+
+#loginpage h3 { display:none; }
+
+/* 로그인 */
+#loginpage .login { float:left; width:350px; min-height:156px; padding-right:70px; background:url(../../../../../design/d4-0186/onedesign/images/logpage_03.gif) right 0 no-repeat; }
+#loginpage .login fieldset { position:relative; width:350px; margin:0 auto; }
+
+#loginpage .login fieldset .id,
+#loginpage .login fieldset .password { overflow:hidden; display:block; width:350px; border-bottom:1px solid #d9d9d9; height:26px; line-height:26px; }
+#loginpage .login fieldset .password { margin-top:13px; }
+
+#loginpage .login fieldset .id span,
+#loginpage .login fieldset .password span  { float:left; width:80px; height:26px; line-height:26px; font-size:11px; color:#000; vertical-align:middle; }
+
+/* 로그인 인풋 */
+#loginpage .login fieldset input { float:left; width:270px; height:26px; line-height:26px; padding:0px; border:0; background:none; color:#555; vertical-align:middle; }
+
+/* 보안접속, 아이디 비밀번호 찾기 */
+#loginpage .login fieldset .subbtn { clear:both; height:20px; padding-top:15px; }
+
+/* 보안접속 */
+#loginpage .login fieldset .security { float:left; color:#777; font-size:11px; height:20px; line-height:20px; display:none; }
+#loginpage .login fieldset .security input { width:13px; height:13px; margin:0 3px 0 0; vertical-align:-3px; *vertical-align:2px; }
+#loginpage .login fieldset .security label { margin:0 6px 0 0; }
+
+/* 아이디 비밀번호 찾기 */
+#loginpage .login fieldset ul { float:right; overflow:hidden; height:20px; }
+#loginpage .login fieldset li { float:left; line-height:20px; padding-left:20px; background-image:url(../../../../../design/d4-0186/onedesign/images/line_com.gif); background-repeat:no-repeat; background-position:5px center; }
+#loginpage .login fieldset li:first-child { background:none; padding-left:0; }
+#loginpage .login fieldset li a { line-height:20px; font-size:11px; color:#777; }
+#loginpage .login fieldset li a:hover { color:#000; }
+
+/* 로그인 버튼 */
+#loginpage .login fieldset .loginbtn { clear:both; display:block; width:350px; height:40px; margin-top:14px; }
+
+/* 우측 */
+#loginpage .findline { float:right; width:350px; }
+#loginpage .findline .find { clear:both; margin-bottom:20px; }
+#loginpage .findline .join { clear:both; }
+#loginpage .findline .find_text { clear:both; line-height:25px; margin-bottom:3px; }
+#loginpage .findline .find_btn { clear:both; height:40px; }
+#loginpage .findline .find_btn a { float:left; display:block; }
+#loginpage .findline .find_btn a.first { margin-right:6px; }
+
+/* 비회원 로그인 */
+#nomember { clear:both; width:350px; padding-top:100px; }
+#nomember p { text-align:center; line-height:18px; color:#555; }
+#nomember a { clear:both; display:block; width:350px; height:40px; padding-top:30px; }
+
+
+
+
+
+
+/* 주문조회 로그인*/
+#guest_login { clear:both; width:350px; /*margin:0 auto;*/ padding-top:100px; }
+
+#guest_login ul { width:350px; clear:both; }
+#guest_login li { margin-bottom:13px; border-bottom:1px solid #d9d9d9; }
+
+#guest_login li.guest_name { float:left; width:80px; height:26px; line-height:26px; font-family:'verdana', 'arial', 'Nanum Gothic'; font-size:11px; color:#000; }
+#guest_login li.guest_input { float:left; width:270px; height:26px; }
+
+#guest_login li input { width:270px; height:26px; line-height:26px; padding:0px; border:0 none; color:#555; background:none; }
+#guest_login .button { clear:both; width:350px; height:40px; padding-top:17px; }
+
+
+
+/* BASIC css end */
+

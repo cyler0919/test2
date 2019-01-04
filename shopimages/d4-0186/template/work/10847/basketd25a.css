@@ -1,0 +1,27 @@
+/* BASIC css start */
+#cartWrap .wish-opt { color: #FFA500; }
+#cartWrap .tit-cart { margin-top: 30px; }
+/* 회원 등급 표시 */
+#cartWrap .mem-lvl { zoom: 1; overflow: hidden; margin-top: 45px; }
+/* 배송 메세지 */
+#cartWrap .delivery { margin-top: 20px; text-align: center; }
+/* 주문 컨트롤 버튼 */
+#cartWrap .btn-order-ctrl { margin-top: 10px; text-align: right; font-size: 0; line-height: 0; }
+#cartWrap .btn-order-ctrl a { margin-left: 5px; }
+
+
+.amount { position: relative; width: 51px; height: 53px; margin-left: auto; margin-right: auto; }
+.amount input,
+.amount .amount-txt { position: absolute; top: 0; left: 0; width: 25px; height: 14px; border: 1px solid #bbb; text-align: right; }
+.amount .amount-btn { position: absolute; bottom: 0; left: 0; }
+.amount .amount-up img { position: absolute; top: 5px; right: 0; }
+.amount .amount-dw img { position: absolute; top: 14px; right: 0; }
+
+
+
+.tb-price { color:#000; }
+.fstyle { padding:10px 0; }
+.fstyle strong { font-size:17px; color:#f12240 !important; font-weight:bold; }
+.tit-cart { font-size:14px; color:#000; font-weight:bold; padding:50px 0 5px; line-height:16px; }
+/* BASIC css end */
+

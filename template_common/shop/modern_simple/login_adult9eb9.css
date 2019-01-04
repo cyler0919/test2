@@ -1,0 +1,75 @@
+/* BASIC css start */
+body { background:#ededed; }
+#joinAdult { padding-bottom:140px; text-align:center; border-bottom:1px solid #ccc; }
+#joinAdult .adult-top { position:relative; width:840px; margin:55px auto; }
+#joinAdult .adult-top a { position:absolute; top:120px; left:260px; display:inline-block; width:160px; height:40px; line-height:40px; color:#fff; font-weight:bold; font-size:16px; background:#cb3131; text-align:center; letter-spacing:-1px; font-family:dotum; }
+
+#joinAdult .cnt-box:after { clear: both; content: ""; display: block; }
+#joinAdult .cnt-box { width:840px; padding:60px 0; margin:0 auto; background:#fff; }
+
+#joinAdult .cnt-box .ipin-big-box { text-align:center; }
+#joinAdult .cnt-box .ipin-big-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; }
+#joinAdult .cnt-box .ipin-big-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; left:415px; }
+#joinAdult .cnt-box .ipin-big-box a.btn-b { display:inline-block; width:300px; padding:12px 0; margin-top:10px; margin-bottom: 20px; color:#fff; font-weight:bold; background:#414c5b; text-align:center; }
+#joinAdult .cnt-box .ipin-big-box a img { vertical-align:middle; }
+
+#joinAdult .cnt-box .ipin-box { float:left; width:355px; margin-left:65px; text-align:left; border-right:1px solid #d6d6d6; }
+#joinAdult .cnt-box .ipin-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; }
+#joinAdult .cnt-box .ipin-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; }
+#joinAdult .cnt-box .ipin-box a.btn-b { display:inline-block; width:300px; padding:12px 0; margin-bottom:20px; color:#fff; font-weight:bold; background:#414c5b; text-align:center; }
+#joinAdult .cnt-box .ipin-box a img { vertical-align:middle; }
+
+#joinAdult .cnt-box .phone-big-box { text-align:center; }
+#joinAdult .cnt-box .phone-big-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; }
+#joinAdult .cnt-box .phone-big-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; left:415px; }
+#joinAdult .cnt-box .phone-big-box a.btn-b { display:inline-block; width:300px; padding:12px 0; margin-top:10px; margin-bottom: 20px; color:#fff; font-weight:bold; background:#414c5b; text-align:center; }
+#joinAdult .cnt-box .phone-big-box a img { vertical-align:middle; }
+
+#joinAdult .cnt-box .phone-box { float:right; width:300px; margin-right:65px; text-align:left; }
+#joinAdult .cnt-box .phone-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; }
+#joinAdult .cnt-box .phone-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; }
+#joinAdult .cnt-box .phone-box a { display:inline-block; width:300px; padding:12px 0; margin-bottom:20px; color:#fff; font-weight:bold; background:#414c5b; text-align:center; }
+#joinAdult .cnt-box .phone-box a img { vertical-align:middle; }
+
+
+#joinAdult .cnt-box .guest-box { float:left; width:355px; margin-left:65px; text-align:left; border-right:1px solid #d6d6d6; }
+#joinAdult .cnt-box .guest-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; }
+#joinAdult .cnt-box .guest-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; }
+
+#joinAdult .cnt-box .guest-box a.btn-b { display:inline-block; width:300px; padding:12px 0; margin-bottom:20px; color:#fff; font-weight:bold; background:#414c5b; text-align:center; }
+#joinAdult .cnt-box .guest-box a.btn-s { display:inline-block; width:142px; padding:12px 0; margin-bottom:20px; margin-right:5px; color:#fff; font-weight:bold; background:#414c5b; text-align:center; }
+
+#joinAdult .cnt-box .guest-box a img { vertical-align:middle; }
+
+#joinAdult .cnt-box .login-box { float:right; position:relative; width:305px; margin-right:65px; }
+#joinAdult .cnt-box .login-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; text-align:left; }
+#joinAdult .cnt-box .login-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; }
+#joinAdult .cnt-box .login-box ul { width:225px; margin-right:80px; border:1px solid #aaa; border-bottom:none; border-right:none; }
+#joinAdult .cnt-box .login-box ul li { position:relative; height:36px; line-height:38px; border-bottom:1px solid #aaa; background:#fff; }
+#joinAdult .cnt-box .login-box ul li label { position:absolute; top:0; left:10px; font-size:12px; font-weight:bold; color:#b3b3b3; }
+#joinAdult .cnt-box .login-box ul li .input-text { width:90%; height:34px; line-height:38px; border:none; font-size:12px; font-weight:bold; color:#000; vertical-align:top; }
+#joinAdult .cnt-box .login-box .btn-login { position:absolute; top:42px; right:0; display:inline-block; width:80px; height:75px; line-height:75px; *height:77px; _height:75px; color:#fff; font-size:12px; font-weight:bold; background:#3c3f46; }
+#joinAdult .cnt-box .login-box .btn-login-member { position:absolute; top:0px; right:0; display:inline-block; width:80px; height:75px; line-height:75px; *height:77px; _height:75px; color:#fff; font-size:12px; font-weight:bold; background:#3c3f46; }
+
+#joinAdult .cnt-box .login-box .join-find { width:100%; height:55px; line-height:57px; margin-top:5px; color:#808080; font-size:12px; font-weight:bold; text-align:left; }
+#joinAdult .cnt-box .login-box .join-find .chk-box { height:20px; line-height:22px; padding-left:20px; background:url(../../../images/common/h15_ssl_check.gif) no-repeat 0 2px; }
+#joinAdult .cnt-box .login-box .join-find .chk-box label { display:inline-block;}
+#joinAdult .cnt-box .login-box .join-find .chk-box input { width:0; height:0; filter:alpha(opacity:0); opacity:0; }
+
+
+
+#joinAdult .cnt-box .msg-box { float:left; width:355px; margin-left:65px; text-align:left; }
+#joinAdult .cnt-box .msg-box .box-tit { position:relative; font-weight:bold; color:#000; margin:10px 0; font-size:18px; }
+#joinAdult .cnt-box .msg-box .box-tit span { display:inline-block; position:absolute; top:-10px; left:0; width:18px; height:2px; border-top:2px solid #4d4d4d; }
+
+#joinAdult .cnt-box .login-box { float:right; position:relative; width:305px; margin-right:65px; }
+#joinAdult .cnt-box .login-box .btn-join { display:inline-block; width:305px; height:46px; line-height:48px; margin-top:10px; color:#fff; font-size:12px; font-weight:bold; background:#7e8999; }
+
+#joinAdult-footer { padding:20px 0; text-align:center; color:#808080; }
+#joinAdult-footer .ft-links { font-size:11px; color:#808080; }
+#joinAdult-footer .ft-links a { font-size:11px; color:#808080; text-decoration:none; }
+#joinAdult-footer .ft-links a strong { font-size:11px; color:#000; }
+#joinAdult-footer .ft-links span { display:inline-block; padding:0 8px; color:#e0e0e0; }
+#joinAdult-footer .ft-links .cs_center {vertical-align:middle; color:#808080;}
+/* BASIC css end */
+

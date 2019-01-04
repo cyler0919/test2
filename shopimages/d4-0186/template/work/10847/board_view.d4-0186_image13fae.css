@@ -1,0 +1,36 @@
+/* BASIC css start */
+.bbs-link a.delete { padding: 0 3px 0 5px; }
+.bbs-link a.reply { padding: 0; }
+.bbs-table-view .data-bd-cont { padding: 20px 0 40px 0; }
+.wrt { padding-left: 10px; }
+.wrt span { margin: 0px 10px; }
+.wrt textarea { width: 93%; height: 50px; margin-right: 5px; }
+.view-link { text-align: right; }
+.view-link .con-link { position: absolute; left: 0px; }
+.input-style2 { width: 120px; margin: 0px 5px; }
+.list-link { padding: 6px 14px; border-top: 1px solid #ededed; border-bottom: 1px solid #ededed; }
+.list-link li { padding: 4px 0px; }
+.list-link span.arrow { padding: 0px 10px 0px 15px; font-size: 11px; color: #9d9d9d; }
+.list-link span.arrow.prev { background: url(../../../../../images/d3/modern_simple/common/icon_prev_arrow.gif) no-repeat left top; }
+.list-link span.arrow.next { background: url(../../../../../images/d3/modern_simple/common/icon_next_arrow.gif) no-repeat left top; }
+.data-bd-cont .add_info { float: left; border: 1px solid #e5e5e5; width: 97%; padding: 5px 10px; line-height: 150%; margin-bottom: 10px; }
+.data-bd-cont .add_title { float: left; width: 30%; font-weight: bold; }
+.data-bd-cont .add_content { float: left; width: 70%; }
+.data-bd-cont .attach { text-align: center; margin-bottom: 10px; }
+/* 관련 상품 목록 */
+.fixed-img-collist { margin-top:10px; padding-top:10px; border-top:1px solid #e5e5e5;}
+.list-tit { padding-left:7px; color:#9d9d9d; background: url('../../../../../images/d3/modern_simple/common/bull_join_required.gif') no-repeat 0 50%;}
+.fixed-img-collist ul { padding:15px 11px 0;}
+.fixed-img-collist ul li { float:left; padding:0 10px 15px; text-align:center;}
+.fixed-img-collist ul li a { display:block; width:150px; font-size:11px; color:#9d9d9d;}
+.fixed-img-collist ul li a span.prd img { width:142px; height:142px; margin-bottom:8px; padding:3px; border:1px solid #d8d8d8;}
+.fixed-img-collist ul li p { padding:1px; font-size:11px; color:#666; font-weight:bold;}
+/* 개인정보보호정책 동의 */
+.privercy-contract textarea {  height: 60px; width: 660px; }
+.privercy-contract-tap { height:30px; }
+.privercy-contract-tap li a { padding: 7px 10px; }
+
+.cont-sub-des .hit { display:none; }
+.data-bd-cont .attach img { text-align:center; }
+/* BASIC css end */
+

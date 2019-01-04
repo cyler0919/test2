@@ -1,0 +1,59 @@
+div#lens_area {
+    position:absolute;
+    display:none;
+    border:1px solid #FF0000;
+    background:#FFFFFF;
+    filter: alpha(opacity=40);
+    opacity:0.4;
+}
+span#zoom_area {
+    position:absolute;
+    padding:0;
+    display:none;
+}
+div#zoomimg_area {
+    position:absolute;
+    border:1px solid #413c2d;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    top:0;
+    left:0;
+    z-index:2;
+}
+img#zoom_img {
+    position:absolute;
+    margin:0;
+    padding:0;
+    top:0;
+    left:0;
+}
+div#zoom_img_bg {
+    position:absolute;
+    background-color:#DDD;
+    margin:5px 0 0 5px;
+    padding:0;
+    top:0;
+    left:0;
+    z-index:1;
+    display:none;
+}
+div#watermark_area {
+    width:160px;
+    font-weight:bold;
+    font-size:12px;
+    padding:5px;
+    display:none;
+    position:absolute;
+    text-align:center;
+    text-decoration:none;
+    background-color:#FFF;
+    filter: alpha(opacity=30);
+    opacity:0.3;
+}
+div.clear_both {
+    clear:both;
+}
+#poweroption select.vo_value_list {
+    font-size:8pt;
+}

@@ -1,0 +1,11 @@
+/* BASIC css start */
+#bbsData .bbs-link { position: relative; }
+#bbsData .bbs-link-top { margin-top: 10px; margin-bottom: -40px;margin-right: 0px; text-align: left; margin-left: 0px; }
+#bbsData .bbs-link-btm {float:right;   margin:20px 0px 0;  text-align:left;  }
+
+
+.page-body {padding:0; margin:0;}
+
+.key-wrap a {margin-top:2px;}
+/* BASIC css end */
+

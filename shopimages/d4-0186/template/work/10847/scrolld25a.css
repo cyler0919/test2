@@ -1,0 +1,11 @@
+/* BASIC css start */
+#todayWrap #today { text-align: center; }
+#todayWrap #today .ft-today { width:100%; margin:0 auto; }
+#todayWrap #today .ct-today li { height:75px; margin-top:5px; }
+#todayWrap #today .ct-today li:first-child { margin-top:0px; }
+#todayWrap #today .ct-today li img { max-width:75px; }
+
+#quickR { display:none; }
+
+/* BASIC css end */
+

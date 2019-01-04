@@ -1,0 +1,16 @@
+/* BASIC css start */
+#guide { padding:15px; background:#f2f2f2; color:#8f8f8f; font-size:11px; line-height:160%; border:1px solid #e6e6e6; }
+#guide .page-body { margin:0 auto; padding:40px; background:#fff; }
+#guide .t-msg { margin-top: 20px; color: #a4a4a4; }
+#guide .t-msg em { color: #545454; }
+/* gd-dsc */
+#guide .gd-dsc { margin-top: 40px; }
+#guide .gd-dsc dt { position: relative; }
+#guide .gd-dsc dt span { display: block; padding-bottom: 5px; color: #424242; font-weight: bold;  }
+#guide .gd-dsc dt span a { font-weight: normal; }
+#guide .gd-dsc dd { padding-top: 5px; line-height: 16px; }
+#guide .gd-dsc li { margin-top: 3px; }
+#guide .gd-dsc .bull li { padding-left: 10px; }
+
+/* BASIC css end */
+

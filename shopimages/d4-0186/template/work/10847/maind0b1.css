@@ -1,0 +1,22 @@
+/* BASIC css start */
+/* 메인 상단 전환 배너 */
+.slideshow-wrapper  { float:left; position:relative; width:1200px; height:450px; overflow:hidden; } /* overflow:hidden; */
+.slideshow-wrapper .vi { float:left; position:absolute; width:1200px; height:450px; z-index:1; opacity:0; filter:alpha(opacity=0); }
+.slideshow-wrapper .bak { float:left; position:absolute; width:1200px; height:450px; display:none; }
+.slideshow-wrapper .btn { float:left; position:absolute; width:80px; height:15px; margin:410px 0px 0px 560px; z-index:30; display:none; }
+.slideshow-wrapper .btn .btnbox { float:left; position:relative; width:80px; height:15px; }
+.slideshow-wrapper .btn .btnbox .bull { float:left; position:relative; width:20px; height:15px; padding-right:0px; background:url(../../../../../design/d4-0186/onedesign/images/promotion_btn_02.png) 0 0 no-repeat; margin-left:0px; cursor:pointer; }
+.slideshow-wrapper .btn .btnbox .bull.active { float:left; position:relative; width:20px; height:15px; padding-right:0px;  background:url(../../../../../design/d4-0186/onedesign/images/promotion_btn_01.png) 0 0 no-repeat; }
+
+/* 프로모션 전환 배너 */
+.slideshow-wrapper2  { margin:0 auto; position:relative; width:380px; height:280px; } /* overflow:hidden; */
+.slideshow-wrapper2 .vi { float:left; position:absolute; width:380px; height:280px; z-index:1; opacity:0; filter:alpha(opacity=0); }
+.slideshow-wrapper2 .bak { float:left; position:absolute; width:380px; height:280px; display:none; }
+.slideshow-wrapper2 .btn { float:left; position:absolute; width:80px; height:15px; margin:-33px 0px 0px 300px; z-index:30; }
+.slideshow-wrapper2 .btn .btnbox { float:left; position:relative; width:80px; height:15px; }
+.slideshow-wrapper2 .btn .btnbox .bull { float:left; position:relative; width:20px; height:15px; padding-right:0px; background:url(../../../../../design/d4-0186/onedesign/images/promotion_btn_02.png) 0 0 no-repeat; margin-left:0px; cursor:pointer; }
+.slideshow-wrapper2 .btn .btnbox .bull.active { float:left; position:relative; width:20px; height:15px; padding-right:0px;  background:url(../../../../../design/d4-0186/onedesign/images/promotion_btn_01.png) 0 0 no-repeat; }
+
+
+/* BASIC css end */
+
